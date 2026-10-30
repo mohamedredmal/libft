@@ -6,7 +6,7 @@
 /*   By: fanidi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 19:14:12 by fanidi            #+#    #+#             */
-/*   Updated: 2026/10/21 17:05:20 by fanidi           ###   ########.fr       */
+/*   Updated: 2026/10/23 11:35:47 by fanidi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ size_t ft_strlcpy(char dst[], const char *src, size_t dsize)
 			dst[i] = src[i];
 			i++;
 		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	while(src[j] != '\0')
 	{
 		j++;
