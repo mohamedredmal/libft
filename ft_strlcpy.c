@@ -3,41 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanidi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mohfanid <mohfanid@tudent.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/18 19:14:12 by fanidi            #+#    #+#             */
-/*   Updated: 2026/10/23 11:35:47 by fanidi           ###   ########.fr       */
+/*   Created: 2026/10/26 11:06:32 by oben-el           #+#    #+#             */
+/*   Updated: 2026/11/06 23:29:05 by mohfanid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-size_t ft_strlcpy(char dst[], const char *src, size_t dsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i = 0;
-	size_t j = 0;
-	if(dsize > 0)
-	{
-		while(i < dsize - 1 && src[i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	while(src[j] != '\0')
-	{
-		j++;
-	}
-	return j;
-}
-int main(void)
-{
-	char src[] = "hi";
-	size_t dsize = 3;
-	char dst[] = "hello";
-	size_t result = ft_strlcpy(dst, src, dsize);
+	size_t	slen;
 
-	printf("result: %zu ", result);
-	printf("dst: %s ", dst);
+	slen = ft_strlen(src);
+	if (size == 0)
+		return (slen);
+	while (*src && size-- > 1)
+		*dst++ = *src++;
+	*dst = '\0';
+	return (slen);
 }

@@ -3,35 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanidi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mohfanid <mohfanid@tudent.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/25 12:18:33 by fanidi            #+#    #+#             */
-/*   Updated: 2026/10/25 13:07:07 by fanidi           ###   ########.fr       */
+/*   Created: 2026/10/26 11:16:10 by oben-el           #+#    #+#             */
+/*   Updated: 2026/11/06 23:28:39 by mohfanid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
+	char	*p;
 
-	while(*s)
+	p = (char *)s;
+	while (*p)
 	{
-		if(*s == c)
-			return s;
-		s++;
+		if (*p == (char)c)
+			return (p);
+		p++;
 	}
-	if(c == '\0' && *s == c)
-		return s;
-	return NULL;
+	if (*p == c)
+		return (p);
+	return (NULL);
 }
-
-int main(void)
-{
-        char *s = "hello";
-        int c = 'l';
-        char *res = ft_strchr(s, c);
-
-        printf("res : %s", res);
-}
-

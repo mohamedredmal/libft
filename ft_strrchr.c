@@ -3,34 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanidi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mohfanid <mohfanid@tudent.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/25 13:09:33 by fanidi            #+#    #+#             */
-/*   Updated: 2026/10/25 14:23:47 by fanidi           ###   ########.fr       */
+/*   Created: 2026/10/26 11:23:26 by oben-el           #+#    #+#             */
+/*   Updated: 2026/11/06 23:29:27 by mohfanid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-char *ft_strrchr(char *s, int c)
-{
-	size_t i = 0;
-	char *last = NULL;
+#include "libft.h"
 
-	while(s[i] != '\0')
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*p;
+
+	p = (char *)s;
+	while (*p)
+		p++;
+	if (*p == (char)c)
+		return (p);
+	while (p >= s)
 	{
-		if(s[i] == c)
-			last = &s[i];
-		i++;
+		if (*p == (char)c)
+			return (p);
+		p--;
 	}
-	return last;
-	if(s[i] == c)
-		return &s[i];
-
-}
-int main(void)
-{
-	char *s = "hellol";
-	int c = 'a';
-	char *res = ft_strrchr(s, c);
-	printf("res : %s", res);
+	return (NULL);
 }

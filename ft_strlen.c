@@ -1,19 +1,23 @@
-#include <stddef.h>
-#include <stdio.h>
-size_t ft_strlen(const char *s)
-{
-    size_t i = 0;
-    while(s[i])
-    {
-        i++;
-    }
-    return i;
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohfanid <mohfanid@tudent.1337.ma>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 11:04:32 by oben-el           #+#    #+#             */
+/*   Updated: 2026/11/06 23:29:08 by mohfanid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main(void)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-    const char *str = "Hello, World!";
-    size_t length = ft_strlen(str);
-    printf("Length of the string \"%s\" is: %zu\n", str, length);
-    return 0;
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

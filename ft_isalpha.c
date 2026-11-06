@@ -1,19 +1,18 @@
-#include <stdio.h>
-int ft_isalpha(char c)
-{
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    {
-        return 1;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohfanid <mohfanid@tudent.1337.ma>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 10:38:19 by oben-el           #+#    #+#             */
+/*   Updated: 2026/11/06 23:26:48 by mohfanid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    }else
-    {
-        return 0;
-    }
-}
+#include "libft.h"
 
-int main(void)
+int	ft_isalpha(int c)
 {
-    int x = ft_isalpha('1');
-    printf("%d\n", x);
-    return 0;
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
